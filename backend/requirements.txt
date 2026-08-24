@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlmodel
+pyjwt
+python-dotenv
+google-genai
+chromadb
+sentence-transformers
