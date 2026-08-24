@@ -33,7 +33,7 @@ export default function App() {
   const chatEndRef = useRef(null);
 
   const fetchProducts = () => {
-    fetch('http://127.0.0.1:8000/api/products')
+    fetch('https://phonehub-ka2n.onrender.com/api/products')
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error(err));
@@ -95,7 +95,7 @@ export default function App() {
     const endpoint = authMode === 'login' ? 'login' : 'register';
     
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/${endpoint}`, {
+      const res = await fetch(`https://phonehub-ka2n.onrender.com/api/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authForm),
@@ -139,7 +139,7 @@ export default function App() {
       const headers = { 'Content-Type': 'application/json' };
       if (user?.token) headers['Authorization'] = `Bearer ${user.token}`;
 
-      const res = await fetch('http://127.0.0.1:8000/api/checkout', {
+      const res = await fetch('https://phonehub-ka2n.onrender.com/api/checkout', {
         method: 'POST',
         headers,
         body: JSON.stringify({
@@ -186,7 +186,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/chat', {
+      const res = await fetch('https://phonehub-ka2n.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ history: newHistory }),
